@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and effects */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease-out;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">DevPort</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
+                <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition">Skills</a>
+                <a href="#courses" class="text-gray-700 hover:text-indigo-600 transition">Courses</a>
+                <a href="#software" class="text-gray-700 hover:text-indigo-600 transition">Software</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white w-full px-6 py-3" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
+                <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition">Skills</a>
+                <a href="#courses" class="text-gray-700 hover:text-indigo-600 transition">Courses</a>
+                <a href="#software" class="text-gray-700 hover:text-indigo-600 transition">Software</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white pt-20">
+        <div class="container mx-auto px-6 text-center fade-in">
+            <div class="max-w-3xl mx-auto">
+                <img src="https://via.placeholder.com/150" alt="Profile" class="rounded-full h-32 w-32 mx-auto mb-6 border-4 border-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">John Doe</h1>
+                <h2 class="text-2xl md:text-3xl font-light mb-6">Software Engineer & Developer</h2>
+                <p class="text-lg mb-8 opacity-90">I build elegant solutions to complex problems with clean, efficient code and innovative thinking.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition">View My Work</a>
+                    <a href="#contact" class="border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white hover:text-indigo-600 transition">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software/Plugins Section -->
+    <section id="software" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Plugins & Software</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Tools and applications I've developed to solve specific problems and improve workflows.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Software Card 1 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-code text-6xl text-indigo-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">CodeOptimizer Pro</h3>
+                        <p class="text-gray-600 mb-4">A VS Code extension that analyzes and optimizes JavaScript code in real-time.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">VS Code</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 font-medium hover:underline">View on GitHub →</a>
+                    </div>
+                </div>
+                
+                <!-- Software Card 2 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-database text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">DB Sync Manager</h3>
+                        <p class="text-gray-600 mb-4">A desktop application for synchronizing databases across different environments.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Electron</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SQL</span>
+                        </div>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Download →</a>
+                    </div>
+                </div>
+                
+                <!-- Software Card 3 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-6xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">UI Component Library</h3>
+                        <p class="text-gray-600 mb-4">A React Native component library with 50+ customizable UI elements.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">TypeScript</span>
+                        </div>
+                        <a href="#" class="text-green-600 font-medium hover:underline">View Documentation →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Featured Projects</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Selected projects that demonstrate my problem-solving abilities and technical expertise.</p>
+            </div>
+            
+            <!-- Project 1 -->
+            <div class="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://via.placeholder.com/800x500" alt="Project 1" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 dark-overlay flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white bg-indigo-600 px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Analytics Dashboard</h3>
+                        <p class="text-gray-600 mb-4">A real-time analytics platform for e-commerce businesses with customizable reports and data visualization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">D3.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Key Features</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Real-time sales tracking and inventory management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Customizable dashboards with drag-and-drop widgets</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Predictive analytics using machine learning models</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Multi-user access with role-based permissions</span>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition">Live Demo</a>
+                        <a href="#" class="border border-gray-300 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">Case Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="order-1 lg:order-2 project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://via.placeholder.com/800x500" alt="Project 2" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 dark-overlay flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white bg-indigo-600 px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AI-Powered Code Review Assistant</h3>
+                        <p class="text-gray-600 mb-4">An intelligent system that automatically reviews pull requests and suggests improvements.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">TensorFlow</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">GitHub API</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">Flask</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-2 lg:order-1">
+                    <h3 class="text-2xl font-bold mb-4">Key Features</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Automated code quality analysis with custom rules</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Security vulnerability detection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Learning model that improves with each review</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Integration with GitHub, GitLab, and Bitbucket</span>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition">View on GitHub</a>
+                        <a href="#" class="border border-gray-300 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">Technical Paper</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Video Section -->
+            <div class="text-center mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Project Walkthrough</h3>
+                <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden max-w-4xl mx-auto">
+                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Technical Skills</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">A comprehensive overview of my technical capabilities and areas of expertise.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Skill Bars -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Proficiency Levels</h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">JavaScript/TypeScript</span>
+                                <span class="text-gray-500">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">React/React Native</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-indigo-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Node.js</span>
+                                <span class="text-gray-500">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-indigo-600 h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Python</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-indigo-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">SQL/NoSQL</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-indigo-600 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skill Lists -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Technologies & Tools</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2 text-indigo-600">Frontend</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    React.js
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Vue.js
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Tailwind CSS
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Redux
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2 text-indigo-600">Backend</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Node.js
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Express
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Django
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Flask
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2 text-indigo-600">DevOps</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Docker
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Kubernetes
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    AWS
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    CI/CD Pipelines
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2 text-indigo-600">Other</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Git
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Jest
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Webpack
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    GraphQL
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificates -->
+            <div class="mt-16 max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold mb-6 text-center">Certifications</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+                        <div class="bg-indigo-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-certificate text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">AWS Certified Developer</h4>
+                        <p class="text-sm text-gray-600 mb-3">Amazon Web Services, 2022</p>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:underline inline-flex items-center">
+                            View Certificate <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+                        <div class="bg-indigo-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-certificate text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Google Professional Data Engineer</h4>
+                        <p class="text-sm text-gray-600 mb-3">Google Cloud, 2021</p>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:underline inline-flex items-center">
+                            View Certificate <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+                        <div class="bg-indigo-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-certificate text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">React Native Advanced Concepts</h4>
+                        <p class="text-sm text-gray-600 mb-3">Udemy, 2020</p>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:underline inline-flex items-center">
+                            View Certificate <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Completed Courses</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Continuous learning is key to staying relevant in the fast-paced tech industry.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                        <!-- Column 1 -->
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg mb-4 text-indigo-600">Computer Science</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Algorithms, Part I</h4>
+                                        <p class="text-sm text-gray-600">Princeton University (Coursera)</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Computer Architecture</h4>
+                                        <p class="text-sm text-gray-600">Coursera</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Operating Systems</h4>
+                                        <p class="text-sm text-gray-600">Georgia Tech (Udacity)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Column 2 -->
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg mb-4 text-indigo-600">Web Development</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Advanced React Patterns</h4>
+                                        <p class="text-sm text-gray-600">Frontend Masters</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Node.js: Advanced Concepts</h4>
+                                        <p class="text-sm text-gray-600">Udemy</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Web Performance Optimization</h4>
+                                        <p class="text-sm text-gray-600">Google Web Fundamentals</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Column 3 -->
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg mb-4 text-indigo-600">Data Science</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Machine Learning</h4>
+                                        <p class="text-sm text-gray-600">Stanford University (Coursera)</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Data Visualization</h4>
+                                        <p class="text-sm text-gray-600">University of Illinois</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-gray-400 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">Big Data with Spark</h4>
+                                        <p class="text-sm text-gray-600">Databricks Academy</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="#" class="inline-flex items-center text-indigo-600 font-medium hover:underline">
+                        View all completed courses <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-indigo-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Let's Work Together</h2>
+                <p class="text-lg mb-8 opacity-90">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:contact@example.com" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition">Email Me</a>
+                    <a href="https://linkedin.com" target="_blank" class="border border-white text-white px-8 py-3 rounded-full font-medium hover:bg-indigo-700 transition">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white">DevPort</a>
+                    <p class="mt-2 text-sm">Building digital solutions that make an impact.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-dev text-xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm mb-4 md:mb-0">© 2023 John Doe. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-sm hover:text-white transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'skills') {
+                        animateSkillBars();
+                    }
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
